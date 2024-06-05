@@ -20,9 +20,10 @@ const login = async (req, res) => {
 
     try {
         const users = await getUsersFromDatabase();
+        const hashedPassword = await bcrypt.hash(password, 10);
         console.log(users);
         for (const user of users) {
-            if (user.name === userName && bcrypt.compare(password, user.password)) {
+            if (user.name === userName && bcrypt.compare(hashedPassword, user.password)) {
                 const token = jwt.sign({
                     _id: user.id,
                     name: user.name,

@@ -31,11 +31,11 @@ const getUserId = ('', async (req, res) => {
 const addUser = async (req, res) => {
   const { name, password, email } = req.body;
   try {
-   
+    const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new userModel({
       _id: id++,
       name: name,
-      password: password,
+      password: hashedPassword,
       email: email,
     });
     await newUser.save();
