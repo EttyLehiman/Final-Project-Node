@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-mongoose.connect(process.env.DB_CONNECTION_STRING, {
+mongoose.connect("mongodb://127.0.0.1:27017/BusinessDB", {
   serverSelectionTimeoutMS: 5000,
   socketTimeoutMS: 45000,
 });
