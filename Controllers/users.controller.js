@@ -1,6 +1,6 @@
-const userModel = require('../Models/user.model');
+const userModel = require('../models/user.model');
 const bcrypt = require('bcrypt');
-let id = 98;
+let id = 1000;
 
 const getUsers = ('', async (req, res) => {
   try {
@@ -31,7 +31,6 @@ const getUserId = ('', async (req, res) => {
 const addUser = ('', async (req, res) => {
   const { name, password, email } = req.body;
   try {
-    console.log("hii2");
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new userModel({
       _id: id++,

@@ -8,5 +8,10 @@
     "mongoose": "^8.4.1",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "mocha": "^10.5.0",
+    "sinon": "^18.0.0"
   }
 }

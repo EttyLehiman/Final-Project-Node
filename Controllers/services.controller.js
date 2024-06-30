@@ -1,5 +1,5 @@
-const serviceModel = require('../Models/service.model');
-let id = 1;
+const serviceModel = require('../models/service.model');
+let id = 0;
 
 const getServices = ('', async (req, res) => {
   try {
@@ -29,7 +29,7 @@ const getServiceId = ('', async (req, res) => {
 
 const addService = ('', async (req, res) => {
   const data = req.body;
-  console.log(data);
+  // console.log(data);
   try {
     const newService = new serviceModel({
       _id: id++,
